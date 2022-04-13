@@ -16,7 +16,7 @@
                 <div class="media-content">
                 <div class="content">
                     <p>
-                    {% comment %} <a hx-post="{% url 'add-channel' result.snippet.channelId %}"><strong>{{ result.snippet.title }}</strong></a> {% endcomment %}
+                    <a hx-post="{% url 'add-channel' result.snippet.channelId %}"><strong>{{ result.snippet.title }}</strong></a>
                     
                     <br>
                     {{ result.snippet.description }}
