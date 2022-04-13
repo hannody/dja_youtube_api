@@ -20,7 +20,19 @@ def channel_search(request):
     return render(request, 'partials/channel_search_results.html', context)
 
 
-def add_channel(request):
-    """TODO: Add channel to database"""
-    # 27:06 https://www.youtube.com/watch?v=vukzYCi2_yE&t=8s
-    pass
+def add_channel(request, channel_id):
+    res = requests.get(url)
+    result = res.json()['items'][0]
+
+    channel = Channel(
+        name=result['snippet']['title'],
+        playlist_id=result['contentDetails']['relatedPlaylists']['uploads'],
+        thumbnail_url=result['snippet']['thumbnails']['default']['url'],
+        description=result['snippet']['description']
+    )
+
+    channel.save()
+
+    channels = Channel.objects.all()
+    context = {'channels': channels}
+    return render(request, 'partials/channels.html', context)

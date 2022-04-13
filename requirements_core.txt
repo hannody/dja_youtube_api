@@ -1,0 +1,17 @@
+# This file contains the main dependencies for the application.
+# Installing the dependencies is done by running the following command:
+    # pip install -r requirements_core.txt
+
+# Then, freezing the requirements will create a requirements.txt file with all
+# the dependencies.
+
+    # pip freeze > requirements.txt
+
+
+amqp==5.1.0
+celery==5.2.6
+celery-progress==0.1.2
+Django==4.0.3
+redis==4.2.2
+requests==2.27.1
+python-decouple==3.6
